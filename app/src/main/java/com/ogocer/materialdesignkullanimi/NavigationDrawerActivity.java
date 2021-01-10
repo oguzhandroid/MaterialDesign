@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ public class NavigationDrawerActivity extends AppCompatActivity implements Navig
     private NavigationView navigationView;
     private Toolbar toolbarNavView;
     private DrawerLayout drawerLayout;
+    private Fragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,9 @@ public class NavigationDrawerActivity extends AppCompatActivity implements Navig
         toolbarNavView = findViewById(R.id.toolbarNavView);
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView.setNavigationItemSelectedListener(this);
+         fragment = new NavFragmentBir();
+         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_tutucu_nav_view,fragment).commit();
+
 
         setSupportActionBar(toolbarNavView);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbarNavView,0,0);
@@ -49,15 +54,18 @@ public class NavigationDrawerActivity extends AppCompatActivity implements Navig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_nav1_1:
-                Toast.makeText(this, "Tıklanan : Birinci Üst Başlık", Toast.LENGTH_SHORT).show();
+                fragment = new NavFragmentBir();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_tutucu_nav_view,fragment).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             case R.id.action_nav1_2:
-                Toast.makeText(this, "Tıklanan : İkinci Üst Başlık", Toast.LENGTH_SHORT).show();
+                fragment = new NavFragmentIki();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_tutucu_nav_view,fragment).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             case R.id.action_nav2_1:
-                Toast.makeText(this, "Tıklanan : Birinci Alt Başlık", Toast.LENGTH_SHORT).show();
+                fragment = new NavFragmentUc();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_tutucu_nav_view,fragment).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             case R.id.action_nav2_2:
