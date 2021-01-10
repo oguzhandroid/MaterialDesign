@@ -1,5 +1,6 @@
 package com.ogocer.materialdesignkullanimi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,10 +9,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class NavigationDrawerActivity extends AppCompatActivity {
+public class NavigationDrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private NavigationView navigationView;
     private Toolbar toolbarNavView;
     private DrawerLayout drawerLayout;
@@ -23,6 +26,7 @@ public class NavigationDrawerActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigationView);
         toolbarNavView = findViewById(R.id.toolbarNavView);
         drawerLayout = findViewById(R.id.drawerLayout);
+        navigationView.setNavigationItemSelectedListener(this);
 
         setSupportActionBar(toolbarNavView);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbarNavView,0,0);
@@ -38,6 +42,30 @@ public class NavigationDrawerActivity extends AppCompatActivity {
             Intent intent = new Intent(NavigationDrawerActivity.this,MainActivity.class);
             finish();
             startActivity(intent);
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_nav1_1:
+                Toast.makeText(this, "Tıklanan : Birinci Üst Başlık", Toast.LENGTH_SHORT).show();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            case R.id.action_nav1_2:
+                Toast.makeText(this, "Tıklanan : İkinci Üst Başlık", Toast.LENGTH_SHORT).show();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            case R.id.action_nav2_1:
+                Toast.makeText(this, "Tıklanan : Birinci Alt Başlık", Toast.LENGTH_SHORT).show();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            case R.id.action_nav2_2:
+                Toast.makeText(this, "Tıklanan : İkinci Alt Başlık", Toast.LENGTH_SHORT).show();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            default:
+                return false;
         }
     }
 }
