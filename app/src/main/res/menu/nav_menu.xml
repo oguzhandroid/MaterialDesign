@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Birinci Bölüm">
+        <menu>
+            <item android:id="@+id/action_nav1_1"
+                android:title="Birinci Üst Başlık"></item>
+            <item android:id="@+id/action_nav1_2"
+                android:title="İkinci Üst Başlık"></item>
+
+        </menu>
+
+    </item>
+    <item android:title="İkinci Bölüm">
+        <menu>
+            <item android:id="@+id/action_nav2_1"
+                android:title="Birinci Alt Başlık"></item>
+            <item android:id="@+id/action_nav2_2"
+                android:title="İkinci Alt Başlık"></item>
+
+        </menu>
+
+    </item>
+
+
+</menu>
