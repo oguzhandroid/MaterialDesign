@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Item" />
-    <item android:title="Item" />
-    <item android:title="Item" />
+    <item
+        android:id="@+id/action_bir"
+        android:title="item bir" />
+    <item
+        android:id="@+id/action_iki"
+        android:title="item iki" />
+    <item
+        android:id="@+id/action_uc"
+        android:title="item üç" />
 </menu>
