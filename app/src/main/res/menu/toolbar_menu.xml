@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/action_navigationdrawer"
+        android:title="Navigation Drawer" />
+    <item
+        android:id="@+id/action_tablayout"
+        android:title="Tab Layout" />
+    <item
+        android:id="@+id/action_bottomnavigationview"
+        android:title="Bottom Navigation View" />
+    <item
+        android:id="@+id/action_recyclerview"
+        android:title="Recycler View" />
 </menu>
