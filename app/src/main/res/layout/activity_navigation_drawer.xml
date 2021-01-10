@@ -15,7 +15,7 @@
 
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        app:itemTextColor="#FFFFFF"
+        app:itemTextColor="#000000"
         app:menu="@menu/nav_menu" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
