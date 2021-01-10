@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, BottomNavigationActivity.class));
                 return true;
             case R.id.action_navigationdrawer:
+                startActivity(new Intent(MainActivity.this, NavigationDrawerActivity.class));
                 return true;
             case R.id.action_tablayout:
                 startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
