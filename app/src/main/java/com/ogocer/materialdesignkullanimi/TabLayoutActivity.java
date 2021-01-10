@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class TabLayoutActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager2 viewPager2;
+    private ArrayList<Fragment> fragmentListesi = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +21,8 @@ public class TabLayoutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tab_layout);
         tabLayout = findViewById(R.id.tabLayout);
         viewPager2 = findViewById(R.id.viewPager2);
+        fragmentListesi.add(new TabFragmentBir());
+        fragmentListesi.add(new TabFragmentIki());
+        fragmentListesi.add(new TabFragmentUc());
     }
 }
