@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class TabLayoutActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager2 viewPager2;
     private ArrayList<Fragment> fragmentListesi = new ArrayList<>();
+    private ArrayList<String> baslikListesi = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,20 @@ public class TabLayoutActivity extends AppCompatActivity {
         fragmentListesi.add(new TabFragmentBir());
         fragmentListesi.add(new TabFragmentIki());
         fragmentListesi.add(new TabFragmentUc());
+
+        baslikListesi.add("İtem Bir");
+        baslikListesi.add("İtem İki");
+        baslikListesi.add("İtem Üç");
+
+
+
+        MyViewPagerAdapter adapter = new MyViewPagerAdapter(this);
+
+        viewPager2.setAdapter(adapter);
+        new TabLayoutMediator(tabLayout,viewPager2,
+                (tab,position)->tab.setText(baslikListesi.get(position))).attach();
+
+
     }
 
     public class MyViewPagerAdapter extends FragmentStateAdapter{
