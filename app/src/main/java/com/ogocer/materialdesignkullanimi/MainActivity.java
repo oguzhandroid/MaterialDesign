@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,RecyclerViewActivity.class));
                 return true;
             case R.id.action_bottomnavigationview:
-
+                startActivity(new Intent(MainActivity.this, BottomNavigationActivity.class));
                 return true;
             case R.id.action_navigationdrawer:
 
